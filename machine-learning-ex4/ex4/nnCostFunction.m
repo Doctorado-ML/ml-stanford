@@ -66,11 +66,12 @@ Theta2_grad = zeros(size(Theta2));
 % Make the output vectors be 1 at yth position as it is suposed
 % The output class comes in y
 % The 0 is mapped to the 10th output
-I = eye(num_labels);
-Y = zeros(m, num_labels);
-for i = 1:m
-  Y(i, :) = I(y(i), :);
-end
+%I = eye(num_labels);
+%Y = zeros(m, num_labels);
+%for i = 1:m
+%  Y(i, :) = I(y(i), :);
+%end
+Y = [1:num_labels] == y;
 
 % Do Forward propagation
 a1 = [ones(m, 1) X];
